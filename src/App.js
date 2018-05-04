@@ -2,26 +2,49 @@ import React, { Component } from 'react';
 import './App.css';
 import Resolve from './Resolve';
 import Inputarea from './Inputarea';
+import registerResolver from 'uport-did-resolver';
+import resolve from 'did-resolver';
+
+let fetching = false;
 
 class App extends Component {
     constructor(){
         super();
         this.state = {
-            id: "",
-            clicked: false
+            result: {},
+            failed: false,
+            fetching: false,
+            fetched: false,
+            submitted: false
         };        
         
-        this.handleEvent = this.handleEvent.bind(this);
+        registerResolver();
+        
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     
-    handleEvent(id,clicked){
-        this.setState({
-            id: id,
-            clicked: clicked
-        });
+    handleSubmit(id){
+        this.setState({submitted: true});
+        if(id){
+            this.setState({fetched: false, fetching: true});
+            resolve(id).then(res => {this.setState({result: res,
+                                                    failed: false,
+                                                    fetched: true});
+            }).catch(e => {
+                this.setState({failed: {message: "Invalid DID entered"}, 
+                               result: {},
+                               fetched: true});
+            })
+        } else {
+            this.setState({result: {},
+                           fetched: true,
+                           failed: {message: "Please enter a DID"}});
+          }
     };
-
-  render() {      
+    
+    
+  render() {
+      
     return (
       <div className="">
         <header className="header">
@@ -29,9 +52,11 @@ class App extends Component {
             <p>This page is designed to resolve uPort DID documents</p>
         </header>
         <div className="contents">
-            <Inputarea onClick={this.handleEvent} />  
-            {(this.state.clicked)?
-                <Resolve id={this.state.id} clicked={this.state.clicked} />
+            <Inputarea onSubmit={this.handleSubmit} />  
+            {(this.state.submitted)?
+                (<div>
+                    <Resolve res={this.state.result} fetching={this.state.fetching} fetched={this.state.fetched} failed={this.state.failed}/>
+                 </div>)
                 :
                 null
             }
