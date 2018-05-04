@@ -5,9 +5,6 @@ import ReactJson from 'react-json-view'
 //did:uport:2odb5oWvxJKRWnwVaBJ8C65drWgDhqQCrfd
 
 class Resolve extends Component{
-    constructor(props){
-        super(props);  
-    }
     
     render(){
         return (

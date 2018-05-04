@@ -5,7 +5,6 @@ import Inputarea from './Inputarea';
 import registerResolver from 'uport-did-resolver';
 import resolve from 'did-resolver';
 
-let fetching = false;
 
 class App extends Component {
     constructor(){
