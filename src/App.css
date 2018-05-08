@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: 'Lato', sans-serif;
   opacity:0;
   transition: opacity 1s;
+  text-align: center;
 }
 
 *:focus {
@@ -18,22 +17,11 @@ body {
 }
 
 .header{
-    position: relative;
-    text-align: center;
-    top: 30px;
-}
-
-.title{
-    margin-top: 0px;
+    margin-top: 30px;
 }
 
 .contents{
-    text-align: center;
     margin-top: 80px;
-}
-
-.contents p{
-    font-weight: 400;
 }
 
 input[type=textbox]{
@@ -55,12 +43,10 @@ input[type=textbox]{
 }
 
 .resolve {
-    display: inline-block;
     width: 80px;
     position: relative;
     height: 44px;
     top: -2px;
-    text-align: center;
     background-color: #3B5998;
     color: #fff;
     border: none;
@@ -83,7 +69,6 @@ input[type=textbox]{
 .result{
     width: 50%;
     text-align: left;
-    position: relative;
     margin: 40px auto;
     overflow: auto;
     animation: fadein 3s;
@@ -93,8 +78,21 @@ input[type=textbox]{
     font-weight: 900;
     font-style: italic;
     font-size: 30px;
+    margin-top: 30px;
 }
 
 .fetch {
     animation: fadein 1s;
+}
+
+@media screen and (min-width: 400px) and (max-width: 701px) {
+    .result {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 702px) and (max-width: 1024px) {
+    .result {
+        width: 80%;
+    }
 }

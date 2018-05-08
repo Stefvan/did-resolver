@@ -30,14 +30,14 @@ class App extends Component {
                                                     failed: false,
                                                     fetched: true});
             }).catch(e => {
-                this.setState({failed: {message: "Invalid DID entered"}, 
+                this.setState({failed: {message: "Invalid DID entered!"}, 
                                result: {},
                                fetched: true});
             })
         } else {
             this.setState({result: {},
                            fetched: true,
-                           failed: {message: "Please enter a DID"}});
+                           failed: {message: "Please enter a DID!"}});
           }
     };
     
@@ -45,9 +45,9 @@ class App extends Component {
   render() {
       
     return (
-      <div className="">
+      <div>
         <header className="header">
-            <h1 className="title">uPort DID Resolver</h1>
+            <h1>uPort DID Resolver</h1>
             <p>This page is designed to resolve uPort DID documents</p>
         </header>
         <div className="contents">
