@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700i,900');
 
 body {
-  margin: 0;
-  padding: 0;
   font-family: 'Lato', sans-serif;
   opacity:0;
   transition: opacity 1s;
+  text-align: center;
 }
 
 *:focus {
@@ -18,25 +17,18 @@ body {
 }
 
 .header{
-    position: relative;
-    text-align: center;
-    top: 30px;
-}
-
-.title{
-    margin-top: 0px;
+    margin-top: 30px;
 }
 
 .contents{
-    text-align: center;
     margin-top: 80px;
 }
 
-.contents p{
-    font-weight: 400;
+.input-area p {
+    font-weight: 300;
 }
 
-#uportid{
+input[type=textbox]{
     font-size: 15px;
     width: 50%;
     height: 40px;
@@ -52,15 +44,14 @@ body {
 ::placeholder{
     font-weight: 300;
     font-size: 15px;
+    color: #c3c3c3;
 }
 
 .resolve {
-    display: inline-block;
     width: 80px;
     position: relative;
     height: 44px;
     top: -2px;
-    text-align: center;
     background-color: #3B5998;
     color: #fff;
     border: none;
@@ -83,7 +74,6 @@ body {
 .result{
     width: 50%;
     text-align: left;
-    position: relative;
     margin: 40px auto;
     overflow: auto;
     animation: fadein 3s;
@@ -91,10 +81,61 @@ body {
 
 .failed{
     font-weight: 900;
-    font-style: italic;
     font-size: 30px;
+    margin-top: 30px;
 }
 
 .fetch {
     animation: fadein 1s;
+}
+
+.articles {
+    margin-top: 60px;
+}
+
+.articles p {
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+code {
+    font-style: normal;
+}
+
+a:link, a:visited{
+    color: #3B5998;
+}
+
+a:hover{
+    color: #487ef0;
+}
+
+.down-arrow {
+    color: #3B5998;
+    font-size: 30px;
+}
+
+.right-arrow {
+    color: #3B5998;
+    font-style: normal;
+    font-size: 15px;
+    padding-right: 10px;
+}
+
+.git-link {
+    text-decoration: none;
+    font-size: 15px;
+    font-family: "Menlo", monospace;
+}
+
+@media screen and (min-width: 400px) and (max-width: 701px) {
+    .result {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 702px) and (max-width: 1024px) {
+    .result {
+        width: 80%;
+    }
 }
