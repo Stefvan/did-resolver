@@ -22,9 +22,9 @@ class Inputarea extends Component {
     render(){
         return (
             <div className="input-area">
-                <p>uPort ID</p>
+                <p>Enter the uPort ID</p>
                 <form autoComplete="off" onSubmit={this.handleSubmit}>
-                    <input type="textbox" onChange={this.handleChange} value={this.state.id} placeholder="Enter uPort ID here" autoFocus spellCheck="false"></input>
+                    <input type="textbox" onChange={this.handleChange} value={this.state.id} placeholder="did:uport:2odb5oWvxJKRWnwVaBJ8C65drWgDhqQCrfd" autoFocus spellCheck="false"></input>
                     <button type="submit" className="resolve">Resolve</button>
                 </form>
             </div>

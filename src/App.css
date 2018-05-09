@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700i,900');
 
 body {
   font-family: 'Lato', sans-serif;
@@ -24,6 +24,10 @@ body {
     margin-top: 80px;
 }
 
+.input-area p {
+    font-weight: 300;
+}
+
 input[type=textbox]{
     font-size: 15px;
     width: 50%;
@@ -40,6 +44,7 @@ input[type=textbox]{
 ::placeholder{
     font-weight: 300;
     font-size: 15px;
+    color: #c3c3c3;
 }
 
 .resolve {
@@ -76,13 +81,51 @@ input[type=textbox]{
 
 .failed{
     font-weight: 900;
-    font-style: italic;
     font-size: 30px;
     margin-top: 30px;
 }
 
 .fetch {
     animation: fadein 1s;
+}
+
+.articles {
+    margin-top: 60px;
+}
+
+.articles p {
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+code {
+    font-style: normal;
+}
+
+a:link, a:visited{
+    color: #3B5998;
+}
+
+a:hover{
+    color: #487ef0;
+}
+
+.down-arrow {
+    color: #3B5998;
+    font-size: 30px;
+}
+
+.right-arrow {
+    color: #3B5998;
+    font-style: normal;
+    font-size: 15px;
+    padding-right: 10px;
+}
+
+.git-link {
+    text-decoration: none;
+    font-size: 15px;
+    font-family: "Menlo", monospace;
 }
 
 @media screen and (min-width: 400px) and (max-width: 701px) {

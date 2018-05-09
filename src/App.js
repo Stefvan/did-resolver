@@ -48,8 +48,8 @@ class App extends Component {
       <div>
         <header className="header">
             <h1>uPort DID Resolver</h1>
-            <p>This page is designed to resolve uPort DID documents</p>
-        </header>
+            <p>Resolve a uPort ID into <a href="https://w3c-ccg.github.io/did-spec/" target="_blank" rel="noopener noreferrer">DID document</a></p>
+         </header>
         <div className="contents">
             <Inputarea onSubmit={this.handleSubmit} />  
             {(this.state.submitted)?
@@ -59,6 +59,12 @@ class App extends Component {
                 :
                 null
             }
+        </div>
+        <div className="articles">
+            <p><span className="right-arrow" role="img">&#9654;</span><code><a className="git-link" href="https://github.com/Stefvan/did-resolver" target="_blank" rel="noopener noreferrer">Source code </a></code> for this project</p>
+            <p><span className="right-arrow" role="img">&#9654;</span>Read more about uPort</p>
+            <a href="https://www.uport.me/" target="_blank" rel="noopener noreferrer">uPort page</a><br />
+            <a href="https://medium.com/uport" target="_blank" rel="noopener noreferrer">medium.com/uport</a>
         </div>
       </div>
     );
